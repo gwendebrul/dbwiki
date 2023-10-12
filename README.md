@@ -2,12 +2,12 @@
 
 **DBWiki** is a free template for hugo static website generator. This template ressembles a wiki website for internal use. I use it for bundling my config files and installation notes for my computers/mobile stuff.
 
-        1. [Content Tree](#content-tree)
-        2. [Custom CSS](#custom-css)
-        3. [Google WebFonts](#google-webfonts)
-        4. [Fonts](#fonts)
-        5. [Config.toml Parameters](#configtoml-parameters)
-        6. [Frontmatter Parameters](#frontmatter-parameters)
+1. [Content Tree](#content-tree)
+2. [Custom CSS](#custom-css)
+3. [Google WebFonts](#google-webfonts)
+4. [Fonts](#fonts)
+5. [Config.toml Parameters](#configtoml-parameters)
+6. [Frontmatter Parameters](#frontmatter-parameters)
 
 ## Content Tree
 
