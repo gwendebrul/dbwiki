@@ -1,0 +1,12 @@
+{{ define "main" }}
+    {{ .Content }}
+    {{ $paginator := .Paginate  (where .Site.Pages.ByPublishDate "Type" "article").Reverse (cond (and (isset .Site.Params "pagination_number") (gt .Site.Params.pagination_number 0)) .Site.Params.pagination_number 10) }}
+    {{ range $paginator.Pages }}
+      <div class="articles">
+        {{ .Summary }}
+        <a href="{{ .RelPermalink }}">{{ .Site.Params.read_more_text }}</a>
+        <div class="article-date">Gepubliceerd op {{ .PublishDate.Format "Monday 2 January, 2006" }}</div>
+      </div>
+    {{ end }}
+    {{ partial "pagination.html" (dict "context" . "paginator" $paginator) }}
+{{ end }}

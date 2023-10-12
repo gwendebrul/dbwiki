@@ -1,0 +1,18 @@
+<title>
+    {{ $.Site.Params.test3 }}
+</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link rel="stylesheet" href='{{ "css/theme.css" | relURL}}'>
+
+{{ if (and (isset .Site.Params "stylesheets") (ge (.Site.Params.stylesheets | len) 1)) }}
+    {{ range $stylesheet := .Site.Params.stylesheets }}
+        <link rel="stylesheet" href='{{ $stylesheet | relURL}}'>
+    {{ end }}
+{{ end }}
+
+{{ if (and (isset .Site.Params "google_webfonts") (ge (.Site.Params.google_webfonts | len) 1)) }}
+    {{ range $webfonts := .Site.Params.google_webfonts }}
+        <link rel="stylesheet" href="{{ $webfonts }}">
+    {{ end }}
+{{ end }}

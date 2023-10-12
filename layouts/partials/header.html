@@ -1,0 +1,87 @@
+{{ $read_more_text_bool := isset .Site.Params "read_more_text" }}
+{{ $logo_path_bool := isset .Site.Params "logo_path" }}
+{{ $logo_text_bool := isset .Site.Params "logo_text" }}
+{{ $prefix_static_files_bool := isset .Site.Params "prefix_static_files" }}
+{{ $sidebar_tags_bool := isset .Site.Params "sidebar_tags" }}
+{{ $menu_tags_bool := isset .Site.Params "menu_tags" }}
+{{ $pagination_number_bool := isset .Site.Params "pagination_number" }}
+{{ $pagination_older_text_bool := isset .Site.Params "pagination_older_text" }}
+{{ $pagination_newer_text_bool := isset .Site.Params "pagination_newer_text" }}
+
+{{ if not (and ($read_more_text_bool) ($logo_path_bool) ($logo_text_bool) ($prefix_static_files_bool) ($sidebar_tags_bool) ($menu_tags_bool) ($pagination_number_bool) ($pagination_older_text_bool) ($pagination_newer_text_bool)) }}
+  <div id="params-error">
+    {{ if not ($read_more_text_bool) }}
+      <h4>'read_more_text' parameter is not set</h4>
+    {{ end }}
+
+    {{ if not ($logo_path_bool) }}
+      <h4>'logo_path' parameter is not set</h4>
+    {{ end }}
+
+    {{ if not ($logo_text_bool) }}
+      <h4>'logo_text' parameter is not set</h4>
+    {{ end }}
+
+    {{ if not ($prefix_static_files_bool) }}
+      <h4>'prefix_static_files' parameter is not set</h4>
+    {{ end }}
+
+    {{ if not ($sidebar_tags_bool) }}
+      <h4>'sidebar_tags' parameter is not set</h4>
+    {{ end }}
+
+    {{ if not ($menu_tags_bool) }}
+      <h4>'menu_tags' parameter is not set</h4>
+    {{ end }}
+
+    {{ if not ($pagination_number_bool) }}
+      <h4>'pagination_number' parameter not set</h4>
+    {{ end }}
+
+    {{ if not ($pagination_older_text_bool) }}
+      <h4>'pagination_older_text' parameter not set</h4>
+    {{ end }}
+
+    {{ if not ($pagination_newer_text_bool) }}
+      <h4>'pagination_newer_text' parameter not set</h4>
+    {{ end }}
+  </div>
+{{ end }}
+
+{{ if and ($logo_path_bool) (gt (len .Site.Params.logo_path) 0) }}
+  <div id="logo-image">
+    <img src="{{ .Site.Params.logo_path }}" />
+  </div>
+{{ end }}
+
+<div id="logo-text"><h1>{{ .Site.Params.logo_text }}</h1></div>
+
+
+
+<div id="menu">
+    <ul>
+      {{ $currentPage := . }}
+      {{ range .Site.Menus.main }}
+        <li><a href="{{.URL}}" title="{{.Name}}">{{.Name}}</a>
+            <ul class="sub-menu">
+                {{ range .Children }}
+                    <li><a href="{{.URL}}" title="{{.Name}}">{{.Name}}</a></li>
+                {{ end }}
+            </ul>
+        </li>
+      {{end}}
+      
+      {{ if and ($menu_tags_bool) (eq .Site.Params.menu_tags 1) }}
+      <li>Tags</li>
+        <ul>
+        {{ range .Site.Taxonomies.tags }}
+          <li>
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a>
+          </li>
+        {{ end }}
+        </ul>
+    {{ end }}
+    </ul>
+
+   
+  </div>

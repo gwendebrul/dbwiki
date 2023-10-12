@@ -1,0 +1,8 @@
+<div class="tags">
+    <H2>TAGS:</H2>
+    <ul>
+        {{ range ($.Page.Params.tags) }}
+          <li><a href="{{ $.Site.BaseURL }}tags/{{ . | urlize}}/">{{ . }}</a></li>
+        {{ end }}
+        </ul>
+  </div>

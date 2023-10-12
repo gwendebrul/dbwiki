@@ -1,0 +1,12 @@
+{{ if gt .paginator.TotalPages 1 }}
+<div class="pagination">
+  <span id="page-counter">Pagina {{ .paginator.PageNumber }} van {{ .paginator.TotalPages }}</span>
+  {{ if .paginator.HasNext }}
+  <span class="next"><a href="{{ .paginator.Next.URL }}">&lt;-- {{ site.Params.pagination_older_text }}</a></span>
+  {{ end }}
+  {{ if .paginator.HasPrev }}
+    <span class="prev"><a href="{{ .paginator.Prev.URL }}">{{ site.Params.pagination_newer_text }} --&gt;</a></span>
+  {{ end }}
+</div>
+{{ end }}
+

@@ -1,0 +1,133 @@
+/* Colors */
+/* website: https://www.flatuicolorpicker.com/colors/summer-sky/ */
+/*
+    background error red: #D33257
+    foreground white: #ffffff
+    white smoke : #ececec
+    silver sand: #bdc3c7
+    lynch: #6c7a89
+    Summer Sky: #1e8bc3
+    blumine: #1e517b
+    light wood: #825e5c
+    teak: #a6915c
+*/
+
+#params-error {
+    background-color: #D33257;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+body {
+    background-color: #ececec; /* white smoke */
+    font-family: "Lato";
+}
+
+
+a {
+    text-decoration: none;
+    color: #6c7a89; /* Lynch */
+}
+
+a:hover {
+    color: #1e8bc3; /* summer sky */
+    text-decoration: underline;
+}
+/*
+a:visited {
+    color: #1e517b; /* blumine 
+}
+*/
+
+#logo-text h1 {
+    color: #6c7a89; /* lynch */
+    padding-left: 40px;
+}
+
+#menu ul, .tags ul, #sidebar_tags ul {
+    list-style: none;
+}
+
+#menu ul li, .tags ul li, #sidebar_tags ul li {
+    padding: 5px;
+    color: #6c7a89; /* Lynch */
+}
+
+.articles, .pagination, #article {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#sidebar_tags h2 {
+    color: #6c7a89; /* Lynch */
+}
+
+.article-date {
+    padding: 10px 0px 0px 0px;
+    color: #a6915c; /* teak */
+    font-size: 12px; 
+    float: right;
+}
+.articles H1, .articles p, #content H1, #content p, #content h2, .pagination span {
+    color: #825e5c; /* light wood */
+}
+
+.articles .tags, #content .tags {
+    color: #6c7a89; /* Lynch */
+}
+
+.articles .tags ul, #content .tags ul {
+    display: inline;
+    padding-left: 0px;
+}
+
+.articles .tags h2, .articles .tags ul li, #content .tags h2, #content .tags ul li {
+    display: inline;
+    font-size: 12px;
+}
+
+pre {
+	background-color: #EEEEFF;
+	border: 1px dotted #4466AA;
+	font-family: monospace;
+	margin: 6px 10px 12px 0px;
+	padding: 10px;
+	font-size: 12px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+}
+
+
+/* CSS for landscape mode (desktop) */
+@media all and (orientation: landscape) and (min-width: 1300px) {
+    #logo-text {
+        padding: 20px; 
+    }
+
+    #menu {
+        float: left;
+        padding: 20px;
+        width: 15%;
+    }
+
+    #content {
+        padding: 20px;
+        float: left;
+        width: 60%;
+    }
+
+    #sidebar_tags {
+        float: right;
+        padding: 20px;
+        width: 15%;
+    }
+}
+
+/* CSS for max 1299px width (Phones, Tablets) */
+@media all and (max-width: 1299px) {
+    #logo-text, #menu, #content, #sidebar_tags {
+        padding: 20px;
+    }
+}

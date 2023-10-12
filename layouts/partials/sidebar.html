@@ -1,0 +1,15 @@
+<div id="sidebar_tags">
+    <h2>Tags</h2>
+    <ul>
+    {{ range .Site.Taxonomies.tags }}
+        <li>
+            <a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a>
+        </li>
+        <!--<div>
+            {{ range first 1 (sort .Pages "Type" "publish date") }}
+                <div>{{ .Summary }}</div>
+            {{ end }}
+        </div>-->
+    {{ end }}
+    </ul>
+</div>
