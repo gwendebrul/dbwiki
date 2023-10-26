@@ -8,6 +8,7 @@
 4. [Fonts](#fonts)
 5. [Config.toml Parameters](#configtoml-parameters)
 6. [Frontmatter Parameters](#frontmatter-parameters)
+7. [Shortcodes]()
 
 ## Content Tree
 
@@ -157,3 +158,27 @@ Category must be set to which root folder of your content tree you want the arti
 In my case this can be "bits" or "installation" or "config".
 
 The last one is Tags. This is used for creating tags for your article. These tags can be shown in a sidebar or as a menu item in the header (see config.toml parameters).
+
+## Shortcodes
+
+There are 3 shortcodes available for your template.
+
+                {{< tags >}}
+
+This will show all tags.
+
+The next one is 
+
+                {{< files "<filename>" "<path>" >}}
+
+filename is the name that is visible on the page as a link. path is the path to the file. An example is
+
+                {{< files "myfile.conf" "files/config/linux/myfile.conf" >}}
+
+And the last shortcode is for adding sources
+
+                {{< source "name to display as link" "url" >}}
+
+Here you have to change "name to display as link" to your own name (ex:"error code 6576") this will be display on the page as a link. You can see this as an description of the link.
+
+URL must be set to the source where you get the info from.
