@@ -8,7 +8,7 @@
 4. [Fonts](#fonts)
 5. [Config.toml Parameters](#configtoml-parameters)
 6. [Frontmatter Parameters](#frontmatter-parameters)
-7. [Shortcodes]()
+7. [Shortcodes](#shortcodes)
 
 ## Content Tree
 
