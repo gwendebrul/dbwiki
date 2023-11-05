@@ -99,6 +99,10 @@ pre {
 	white-space: pre-wrap;
 }
 
+img {
+    width: 100%;
+    padding: 10px;
+}
 
 /* CSS for landscape mode (desktop) */
 @media all and (orientation: landscape) and (min-width: 1300px) {
